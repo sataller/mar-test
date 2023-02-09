@@ -1,0 +1,32 @@
+.App-header {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.styledInput {
+  padding: 10px;
+  min-width: 70%;
+  font-size: 18px;
+  min-height: 30px;
+  font-weight: 500;
+  line-height: 134%;
+  border-radius: 10px;
+  font-family: cursive;
+}
+
+.createButton {
+  padding: 10px;
+  min-width: 30px;
+  cursor: pointer;
+  min-height: 30px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.createButton:hover {
+  background: gray;
+}

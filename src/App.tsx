@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import { getCharecters } from './fetch/getCharacters';
+import { useAppDispatch } from './hooks/reduxHooks';
+import Routes from './router';
+import { setCharacters } from './store/charactersSlice';
+import { CharacterType } from './types/types';
+import { CHARACTERS_KEY, getLocalStorage, setLocalStorage } from './utils/localeStorage';
 
 function App() {
+
+  const dispatch = useAppDispatch()
+
+  const getCharectersList = async () => {
+    const data = await getCharecters()
+    dispatch(setCharacters(data))
+    setLocalStorage(CHARACTERS_KEY, data)
+  }
+
+  useEffect(() => {
+    const characters = getLocalStorage(CHARACTERS_KEY)
+    if (characters){
+      const parsedCharacters: CharacterType[] = JSON.parse(characters)
+      dispatch(setCharacters(parsedCharacters))
+    } else {
+      getCharectersList()
+    }
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes/>
     </div>
   );
 }

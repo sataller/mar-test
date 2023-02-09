@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  padding: 40px 50px;
 }
 
 .App-logo {
@@ -13,17 +16,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -34,5 +26,32 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+.contentWrapper {
+  position: relative;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.goBackButton {
+  position: absolute;
+  left: 0;
+  margin: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    padding: 10px 10px;
   }
 }

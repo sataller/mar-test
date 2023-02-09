@@ -1,0 +1,60 @@
+
+.characterDescriptionContainer {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+    position: relative;
+  background: white;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+}
+
+.charecterImg{
+  width: 70%;
+  height: 70%;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 18px;
+  min-height: 30px;
+  font-weight: 600;
+  line-height: 134%;
+  font-family: cursive;
+}
+
+.description {
+  font-family: cursive;
+}
+
+.comicsName {
+  padding: 5px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #282c34;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+  .characterDescriptionContainer {
+    width: 90%
+  }
+
+  .goBackButton {
+    margin: 5px;
+  }
+  
+}
+
