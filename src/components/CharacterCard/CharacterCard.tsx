@@ -1,4 +1,5 @@
 import { CharacterType } from '../../types/types'
+import Image from '../Image/Image'
 import './CharacterCard.css'
 
 export const CharacterCard = ({
@@ -17,13 +18,7 @@ export const CharacterCard = ({
 
   return (
     <div className='characterContainer' onClick={(e) => onCharacterClick(e)}>
-      <img
-        className="charecterImg"
-        alt='Charecter_image'
-        src={character.thumbnail.extension
-          ? `${character.thumbnail.path}.${character.thumbnail.extension}`
-          : `${character.thumbnail.path}`}
-      />
+     <Image thumbnail={character.thumbnail}/>
       <div>
         <p className='title'>{character.name}</p>
       </div>

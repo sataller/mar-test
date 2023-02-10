@@ -12,7 +12,7 @@ type UrlsType = {
   url: string
 }
 
-type ThumbnailType = {
+export type ThumbnailType = {
   extension: string
   path: string
 }

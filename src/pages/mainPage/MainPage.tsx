@@ -11,7 +11,6 @@ const MainPage = ({
 }) => {
 
   const history = useHistory()
-
   const [filtredCharacters, setFiltredCharacters] = useState<CharacterType[]>([])
 
   useEffect(() => {

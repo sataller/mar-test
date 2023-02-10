@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -11,7 +11,7 @@ import DescriptionPageContainer from "./pages/descriptionPage/DescriptionPageCon
 
 const Routes = () => {
   return (
-  <Router basename="/">
+  <Router>
     <Switch>
       <Redirect exact from='/' to='/main' />
       <Route exact path='/main' component={MainPageContainer}/>

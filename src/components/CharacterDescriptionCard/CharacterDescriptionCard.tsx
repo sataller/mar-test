@@ -1,6 +1,7 @@
 import { CharacterType } from "../../types/types"
-import GoBack from "../GoBack/GoBack"
 import './CharacterDescriptionCard.css'
+import GoBack from "../GoBack/GoBack"
+import Image from "../Image/Image"
 
 export const CharacterDescriptionCard = ({
   character,
@@ -11,13 +12,7 @@ export const CharacterDescriptionCard = ({
   return (
     <div className='characterDescriptionContainer'>
       <GoBack />
-      <img
-        className="charecterImg"
-        alt='Charecter_image'
-        src={character.thumbnail.extension
-          ? `${character.thumbnail.path}.${character.thumbnail.extension}`
-          : `${character.thumbnail.path}`}
-      />
+      <Image thumbnail={character.thumbnail}/>
       <div>
         <p className='title'>{character.name}</p>
         <p className='description underlined'>Description:</p>

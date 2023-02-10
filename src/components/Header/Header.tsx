@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router';
-import EditIcon from '../../assets/edite.icon';
+import EditIcon from '../../assets/icons/edite.icon';
 import './Header.css';
 
 const Header = ({
