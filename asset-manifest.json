@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mar-test/static/css/main.e60a0710.css",
-    "main.js": "/mar-test/static/js/main.321b4102.js",
+    "main.js": "/mar-test/static/js/main.d0a8a047.js",
     "static/js/787.f1ad209a.chunk.js": "/mar-test/static/js/787.f1ad209a.chunk.js",
     "index.html": "/mar-test/index.html",
     "main.e60a0710.css.map": "/mar-test/static/css/main.e60a0710.css.map",
-    "main.321b4102.js.map": "/mar-test/static/js/main.321b4102.js.map",
+    "main.d0a8a047.js.map": "/mar-test/static/js/main.d0a8a047.js.map",
     "787.f1ad209a.chunk.js.map": "/mar-test/static/js/787.f1ad209a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e60a0710.css",
-    "static/js/main.321b4102.js"
+    "static/js/main.d0a8a047.js"
   ]
 }
