@@ -11,7 +11,7 @@ import DescriptionPageContainer from "./pages/descriptionPage/DescriptionPageCon
 
 const Routes = () => {
   return (
-  <Router>
+  <Router basename="/">
     <Switch>
       <Redirect exact from='/' to='/main' />
       <Route exact path='/main' component={MainPageContainer}/>
