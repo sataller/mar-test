@@ -14,24 +14,14 @@ const MainPage = ({
 
   const history = useHistory()
   const [value, setValue] = useState<string>('')
-  // const [filteredCharacters, setFilteredCharacters] = useState<CharacterType[]>([])
   const debouncedValue = useDebounce<string>(value, 500)
 
-  const filteredCharacters = useMemo(() =>{
+  const filteredCharacters = useMemo(() => {
     return characters?.filter(character => character.name.toLocaleLowerCase().includes(debouncedValue))
-  },[debouncedValue, characters])
-
-  // useEffect(() => {
-  //   setFilteredCharacters(characters)
-  // }, [characters])
-
-  // useEffect(()=>{
-
-  // },[debouncsdValue])
+  }, [debouncedValue, characters])
 
   const searchHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value.toLocaleLowerCase().trim())
-  
   }, [])
 
   const openDescription = useCallback((characterId: number) => {
@@ -41,7 +31,6 @@ const MainPage = ({
   return (
     <>
       <Header searchHandler={searchHandler} />
-
       <div className={style.contentWrapper}>
         {filteredCharacters?.map(character => {
           return (
