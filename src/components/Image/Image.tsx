@@ -7,8 +7,8 @@ const Image = ({
 }) => {
   return (
     <img
-    className="charecterImg"
-    alt='Charecter_image'
+    className="characterImg"
+    alt='Character_image'
     src={thumbnail.extension
       ? `${thumbnail.path}.${thumbnail.extension}`
       : `${thumbnail.path}`}

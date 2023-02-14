@@ -11,15 +11,15 @@ const MainPage = ({
 }) => {
 
   const history = useHistory()
-  const [filtredCharacters, setFiltredCharacters] = useState<CharacterType[]>([])
+  const [filteredCharacters, setFilteredCharacters] = useState<CharacterType[]>([])
 
   useEffect(() => {
-    setFiltredCharacters(characters)
+    setFilteredCharacters(characters)
   }, [characters])
 
-  const searchHeandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const filtredCharacters = characters?.filter(character => character.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
-    setFiltredCharacters(filtredCharacters)
+  const searchHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredCharacters = characters?.filter(character => character.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
+    setFilteredCharacters(filteredCharacters)
   }, [characters])
 
   const openDescription = useCallback((characterId: number) => {
@@ -28,10 +28,10 @@ const MainPage = ({
 
   return (
     <>
-      <Header searchHeandler={searchHeandler} />
+      <Header searchHandler={searchHandler} />
 
       <div className='contentWrapper'>
-        {filtredCharacters?.map(character => {
+        {filteredCharacters?.map(character => {
           return (
             <CharacterCard key={character.id} character={character} openDescription={openDescription} />
           )

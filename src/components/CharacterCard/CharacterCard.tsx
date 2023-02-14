@@ -18,7 +18,7 @@ export const CharacterCard = ({
 
   return (
     <div className='characterContainer' onClick={(e) => onCharacterClick(e)}>
-     <Image thumbnail={character.thumbnail}/>
+      <Image thumbnail={character.thumbnail} />
       <div>
         <p className='title'>{character.name}</p>
       </div>

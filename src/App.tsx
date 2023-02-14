@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
-import { getCharecters } from './fetch/getCharacters';
+import { getCharacters } from './fetch/getCharacters';
 import { useAppDispatch } from './hooks/reduxHooks';
 import Routes from './router';
 import { setCharacters } from './store/charactersSlice';
@@ -11,8 +11,8 @@ function App() {
 
   const dispatch = useAppDispatch()
 
-  const getCharectersList = async () => {
-    const data = await getCharecters()
+  const getCharactersList = async () => {
+    const data = await getCharacters()
     dispatch(setCharacters(data))
     setLocalStorage(CHARACTERS_KEY, data)
   }
@@ -23,7 +23,7 @@ function App() {
       const parsedCharacters: CharacterType[] = JSON.parse(characters)
       dispatch(setCharacters(parsedCharacters))
     } else {
-      getCharectersList()
+      getCharactersList()
     }
   }, [])
 

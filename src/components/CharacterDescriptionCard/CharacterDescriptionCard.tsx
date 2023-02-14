@@ -16,7 +16,7 @@ export const CharacterDescriptionCard = ({
       <div>
         <p className='title'>{character.name}</p>
         <p className='description underlined'>Description:</p>
-        <p className='description'>{character.description || 'Desription not found'}</p>
+        <p className='description'>{character.description || 'Description not found'}</p>
         <p className='description underlined'>More info:</p>
         <div>{character.urls.map(url => {
           return (url.url
