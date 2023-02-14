@@ -56,3 +56,14 @@ textarea {
 .submitButton:active{
   background: #373737;
 }
+
+.styledInput {
+  padding: 10px;
+  min-width: 70%;
+  font-size: 18px;
+  min-height: 30px;
+  font-weight: 500;
+  line-height: 134%;
+  border-radius: 10px;
+  font-family: cursive;
+}

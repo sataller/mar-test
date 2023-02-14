@@ -1,6 +1,6 @@
 import { CharacterType } from '../../types/types'
 import Image from '../Image/Image'
-import './CharacterCard.css'
+import style from './characterCard.module.css'
 
 export const CharacterCard = ({
   character,
@@ -17,10 +17,10 @@ export const CharacterCard = ({
   }
 
   return (
-    <div className='characterContainer' onClick={(e) => onCharacterClick(e)}>
+    <div className={style.characterContainer} onClick={(e) => onCharacterClick(e)}>
       <Image thumbnail={character.thumbnail} />
       <div>
-        <p className='title'>{character.name}</p>
+        <p className={style.title}>{character.name}</p>
       </div>
     </div>
   )

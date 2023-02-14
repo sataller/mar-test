@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router';
 import { ArrowLeftIcon } from '../../assets/icons/arrowLeft.icon';
-import './GoBack.css';
+import style from './goBack.module.css';
 
 const GoBack = () => {
   const history = useHistory()
@@ -10,7 +10,7 @@ const GoBack = () => {
   }
 
   return (
-    <button className='goBackButton' onClick={goBack}>
+    <button className={style.goBackButton} onClick={goBack}>
       <ArrowLeftIcon />
     </button>
   )

@@ -1,8 +1,10 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { useHistory } from "react-router"
 import CharacterCard from "../../components/CharacterCard/CharacterCard"
 import Header from "../../components/Header/Header"
 import { CharacterType } from "../../types/types"
+import style from '../../App.module.css'
+import useDebounce from "../../hooks/useDebounce"
 
 const MainPage = ({
   characters
@@ -11,16 +13,26 @@ const MainPage = ({
 }) => {
 
   const history = useHistory()
-  const [filteredCharacters, setFilteredCharacters] = useState<CharacterType[]>([])
+  const [value, setValue] = useState<string>('')
+  // const [filteredCharacters, setFilteredCharacters] = useState<CharacterType[]>([])
+  const debouncedValue = useDebounce<string>(value, 500)
 
-  useEffect(() => {
-    setFilteredCharacters(characters)
-  }, [characters])
+  const filteredCharacters = useMemo(() =>{
+    return characters?.filter(character => character.name.toLocaleLowerCase().includes(debouncedValue))
+  },[debouncedValue, characters])
+
+  // useEffect(() => {
+  //   setFilteredCharacters(characters)
+  // }, [characters])
+
+  // useEffect(()=>{
+
+  // },[debouncsdValue])
 
   const searchHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const filteredCharacters = characters?.filter(character => character.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
-    setFilteredCharacters(filteredCharacters)
-  }, [characters])
+    setValue(e.target.value.toLocaleLowerCase().trim())
+  
+  }, [])
 
   const openDescription = useCallback((characterId: number) => {
     history.push(`/description/${characterId}`)
@@ -30,7 +42,7 @@ const MainPage = ({
     <>
       <Header searchHandler={searchHandler} />
 
-      <div className='contentWrapper'>
+      <div className={style.contentWrapper}>
         {filteredCharacters?.map(character => {
           return (
             <CharacterCard key={character.id} character={character} openDescription={openDescription} />

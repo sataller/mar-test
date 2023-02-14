@@ -3,7 +3,7 @@ import { FormType } from '../../types/types'
 import GoBack from '../GoBack/GoBack'
 import Textarea from './Textarea'
 import Input from './Input'
-import './CreateForm.css'
+import style from './createForm.module.css'
 
 type FormRefType = {
   [key: string]: string
@@ -35,7 +35,7 @@ const CreateForm = ({
   }, [])
 
   return (
-    <form onSubmit={createNewCharacter} className='contentFormWrapper'>
+    <form onSubmit={createNewCharacter} className={style.contentFormWrapper}>
       <GoBack />
       <div>
         <Input name='name' id='name' onChange={onChange} />
@@ -45,7 +45,7 @@ const CreateForm = ({
         <Input name='wiki url' id='wiki' onChange={onChange} />
         <Input name='comics url' id='comiclink' onChange={onChange} />
       </div>
-      <button className='submitButton' type='submit'>Create</button>
+      <button className={style.submitButton} type='submit'>Create</button>
     </form>
   )
 }

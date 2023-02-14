@@ -1,4 +1,4 @@
-import './CreateForm.css'
+import style from './createForm.module.css'
 
 const Textarea = ({
   onChange,
@@ -15,9 +15,9 @@ const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>{
 }
 
   return (
-      <div className='inputBlock'>
+      <div className={style.inputBlock}>
         <label htmlFor={id}>{name}:</label>
-        <textarea onChange={(e) => handleChange(e)} className='styledTextarea' id={id} />  
+        <textarea onChange={(e) => handleChange(e)} className={style.styledTextarea} id={id} />  
       </div>
   )
 }

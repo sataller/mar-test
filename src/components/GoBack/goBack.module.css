@@ -1,0 +1,19 @@
+.goBackButton:hover {
+  background: gray;
+}
+
+.goBackButton {
+  position: absolute;
+  left: 0;
+  margin: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .goBackButton {
+    margin: 5px;
+  }
+}

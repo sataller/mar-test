@@ -1,4 +1,5 @@
 import { ThumbnailType } from "../../types/types"
+import style from './image.module.css'
 
 const Image = ({
   thumbnail
@@ -7,7 +8,7 @@ const Image = ({
 }) => {
   return (
     <img
-    className="characterImg"
+    className={style.characterImg}
     alt='Character_image'
     src={thumbnail.extension
       ? `${thumbnail.path}.${thumbnail.extension}`

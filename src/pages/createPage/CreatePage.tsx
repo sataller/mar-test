@@ -1,5 +1,6 @@
 import CreateForm from "../../components/CreateForm/CreateForm"
 import { FormType } from "../../types/types"
+import style from '../../App.module.css'
 
 const CreatePage = ({
   submit
@@ -8,7 +9,7 @@ const CreatePage = ({
 }) => {
 
   return (
-    <div className="contentWrapper">
+    <div className={style.contentWrapper}>
      <CreateForm submit={submit} />
     </div>
   )

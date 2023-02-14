@@ -1,4 +1,4 @@
-import './CreateForm.css'
+import style from './createForm.module.css'
 
 const Input = ({
   onChange,
@@ -15,9 +15,9 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
 }
 
   return (
-      <div className='inputBlock'>
+      <div className={style.inputBlock}>
         <label htmlFor={id}>{name}:</label>
-        <input onChange={(e) => handleChange(e)} className='styledInput' id={id} type='text'/>  
+        <input onChange={(e) => handleChange(e)} className={style.styledInput} id={id} type='text'/>  
       </div>
   )
 }

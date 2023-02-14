@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router';
 import EditIcon from '../../assets/icons/edit.icon';
-import './Header.css';
+import style from './header.module.css';
 
 const Header = ({
   searchHandler
@@ -13,9 +13,9 @@ const Header = ({
   }
 
   return (
-    <header className="App-header">
-      <input className='styledInput' type='text' onChange={searchHandler} placeholder='search by name'/>
-      <button className='createButton' onClick={goToCreatePage} title='Create new character'>
+    <header className={style.appHeader}>
+      <input className={style.styledInput} type='text' onChange={searchHandler} placeholder='search by name'/>
+      <button className={style.createButton} onClick={goToCreatePage} title='Create new character'>
         <EditIcon/>
       </button>
     </header>

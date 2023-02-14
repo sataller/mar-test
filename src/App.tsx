@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './App.css';
+import style from './App.module.css';
 import { getCharacters } from './fetch/getCharacters';
 import { useAppDispatch } from './hooks/reduxHooks';
 import Routes from './router';
@@ -28,7 +28,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className={style.App}>
       <Routes/>
     </div>
   );
